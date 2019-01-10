@@ -43,6 +43,7 @@ h6 {
 .code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background: #1b2b34;
 }
 .pen {
   display: flex;
@@ -87,7 +88,7 @@ h6 {
   display: flex;
   padding: 4px;
   align-items: center;
-  background: black;
+  background: rgba(0,0,0,0.1);
   color: white;
 }
 .editor__heading {
