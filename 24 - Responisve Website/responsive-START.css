@@ -12,3 +12,124 @@ img {
   max-width: 100%;
 }
 
+.wrapper {
+	display: grid;
+	grid-gap: 20px;
+}
+
+.top {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-areas: 
+		"hero hero cta1"
+		"hero hero cta2"
+}
+
+.hero {
+	grid-area: hero;
+	min-height: 400px;
+	background: white url(images/taco.jpg);
+	background-size: cover;
+	background-position: bottom right;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+}
+.hero > * {
+	background: var(--yellow);
+}
+.cta p {
+	margin: 0;
+}
+
+.cta {
+	background-color: var(--yellow);
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
+
+}
+.price {
+	font-size: 60px;
+}
+
+.cta1 {
+	grid-area: cta1;
+}
+
+.cta2 {
+	grid-area: cta2;
+}
+
+.menu ul {
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	list-style: none;
+	/*justify-items: center;*/
+}
+.menu a {
+	color: var(--black);
+	text-decoration: none;
+	background-color: var(--yellow);
+	display: block;
+	text-align: center;
+	padding: 10px;
+}
+
+[aria-controls="menu-list"] {
+	display: none;
+}
+.features {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.feature {
+	background: rgba(255,255,255,0.2);
+	text-align: center;
+	padding: 20px;
+}
+.feature .icon{ 
+	font-size: 50px;
+}
+.about {
+	display: grid;
+	grid-template-columns: 400px 1fr;
+	background: white;
+	padding: 50px;
+	align-items: center;
+}
+.gallery {
+	display: grid;/*
+	grid-template-columns: 1fr 1fr 1fr;*/
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 10px;
+}
+.gallery img {
+	width: 100%;
+}
+.gallery h2 {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	grid-gap: 20px;
+	align-items: center;
+
+}
+.gallery h2:before,
+.gallery h2:after {
+	display: block;
+	content: '';
+	height: 10px;
+	background-color: var(--yellow);
+	background: linear-gradient(to var(--dir, left), var(--yellow), transparent);
+}
+.gallery h2:after {
+	--dir: right;
+}
