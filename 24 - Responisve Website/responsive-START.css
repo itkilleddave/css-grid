@@ -133,3 +133,55 @@ img {
 .gallery h2:after {
 	--dir: right;
 }
+
+@media (max-width: 1000px) {
+	.menu {
+		order: -1;
+	}
+	[aria-controls="menu-list"] {
+		display: block;
+		margin-bottom: 0;
+	}
+	.menu ul li {
+		margin-top: 10px
+	}
+	.menu ul li {
+		max-height: 0;
+		transform: rotate(90deg);
+		transition: all 0.5s;
+		overflow: hidden;
+	}
+	[aria-expanded="true"] ~ ul li {
+		display: grid;
+		max-height: 500px;
+		transform: rotate(0);
+	}
+	[aria-expanded="false"] .close {
+		display: none;
+	}
+	[aria-expanded="true"] .close {
+		display: inline-block;
+	}
+	[aria-expanded="true"] .open {
+		display: none;
+	}
+}
+@media (max-width: 700px) {
+	.top {
+		grid-template-areas: 
+		"hero hero"
+		"cta1 cta2"
+	}
+	.about {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 500px) {
+	.top {
+		grid-template-areas: 
+		"hero"
+		"cta1"
+		"cta2"
+	}
+}
